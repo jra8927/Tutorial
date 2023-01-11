@@ -26,4 +26,4 @@ end;
 $$;
 
 SELECT table_name,Query_Start_Time,Query_End_Time,Query_Execution_Time_Seconds FROM Query_Times
-ORDER BY Query_Execution_Time_Seconds DESC 
+ORDER BY Query_Execution_Time_Seconds ASC
