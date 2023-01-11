@@ -17,7 +17,7 @@ begin
         x := x + 1;
         name := (SELECT TABLE_NAME FROM INFO_SCHEMA WHERE RW = :x);
         query_start_time := (select current_timestamp(2));
-        execute immediate 'SELECT TOP 100 * FROM (' || name || ')';
+        execute immediate 'SELECT TOP 100000 * FROM (' || name || ')';
         query_end_time := (select current_timestamp(2));
         query_execution_time := (SELECT datediff(second, :query_start_time,:query_end_time));
         insert into Query_Times values (:name,:query_start_time,:query_end_time, :query_execution_time);
