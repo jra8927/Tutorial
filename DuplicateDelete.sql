@@ -21,3 +21,5 @@ WHERE DUPLICATES>1
 '
 PRINT @script 
 
+
+PRINT @script 
