@@ -16,7 +16,7 @@ SET @Coluumns=LEFT(@Coluumns,LEN(@Coluumns)-1)
 SET @script=N' 
 WITH CTE AS (SELECT '+@Coluumns+', ROW_NUMBER() over (partition by '+@Coluumns+' ORDER BY '+@firstColumn+') Duplicates
 FROM DBO.'+@table+')
-DELETE FROM CTE 
+DELETE FROM CTES 
 WHERE DUPLICATES>1
 '
 PRINT @script 
